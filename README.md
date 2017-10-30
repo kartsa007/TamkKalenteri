@@ -10,15 +10,11 @@ lähettää ajax-pyynnöt, ja taustaohjelmasta, joka välittää ajax-pyynnöt T
 
 ## Näin pääset alkuun
 
-Hae tiedostot Githubista:
-
-git clone https://github.com/kartsa007/TamkKalenteri.git
-
-
+Asenna tarvittavat ohjelmat ja seuraa asennusohjeita.
 
 ### Tarvittavat ohjelmat
 
-git, node ja npm ohjelmien asentamiseen ja ajamiseen.
+git, node, npm, webpack ohjelmien asentamiseen ja ajamiseen.
 
 ### Asennus
 
@@ -40,6 +36,7 @@ Ja käynnistä proxy-serveri
 5) node proxy.js \<apiKey>
 
 ## Kuvaus tiedostoista
+
 app-hakemistossa selaimeen liittyvät javascriptit.
 
 Marssijärjestys:
