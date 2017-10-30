@@ -2,7 +2,6 @@
 var proxy = require('express-http-proxy')
 var express = require('express')
 var app = express()
-console.log(process.argv[1])
 if (process.argv.length < 3) {
   console.log('ApiKey puuttuu, sorry')
   process.exit(-1)
