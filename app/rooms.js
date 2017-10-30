@@ -33,9 +33,9 @@ function responseOk(response) {
   return response.json()
 }
 
-function queryRooms() {
+function queryRooms(id) {
 //  let username = 'username'
-  let id = Storage.buildingId
+//  let id = Storage.buildingId
 //  let url = 'https://opendata.tamk.fi/r1/reservation/building/' +id
 //  url += '?apiKey=' + username
   let url = '/r1/reservation/building/' + id

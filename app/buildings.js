@@ -15,7 +15,6 @@ function buildingSelection(resources) {
   select.addEventListener('input', (e) => {
     Storage.buildingId = e.target.value
     e.preventDefault()
-    queryRooms()
   })
 }
 

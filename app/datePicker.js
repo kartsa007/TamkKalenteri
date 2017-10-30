@@ -10,14 +10,13 @@ function DatePicker() {
   function weekSelection(dateText, inst) {
     console.log(dateText)
     var date = $(datePicker).datepicker('getDate');
-    let day = date.getDay()
+    let dayOffset = (date.getDay() + 6) % 7
     let offset = date.getTimezoneOffset()
-    Storage.startDate = new Date(date.getFullYear(),
-      date.getMonth(),
-      date.getDate() - date.getDay() + 1);
-    Storage.endDate = new Date(date.getFullYear(),
-      date.getMonth(),
-      date.getDate() - date.getDay() + 8);
+    let ms = date.getTime()
+    ms -= dayOffset * 1000 * 3600 *24
+    Storage.startDate = new Date(ms)
+    // Jump a week forward
+    Storage.endDate = new Date(ms + 7 * 24 * 3600 * 1000)
   }
 
   $(function () {

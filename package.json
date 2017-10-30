@@ -1,0 +1,24 @@
+{
+  "name": "kalenteri",
+  "version": "1.0.0",
+  "description": "Reservation calender showing Tamk class room statuses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kari Heinonen",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.18.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "btoa": "^1.1.2",
+    "express": "^4.16.2",
+    "express-http-proxy": "^1.0.7",
+    "webpack-jquery-ui": "^1.0.0"
+  }
+}

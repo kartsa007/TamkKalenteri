@@ -1,4 +1,5 @@
 'use strict'
+import { queryRooms } from './rooms'
 import { queryRoomReservations } from './reservations'
 function roomId2Code() {
   if (Storage.rooms && Storage.roomId) {
@@ -12,6 +13,15 @@ function roomId2Code() {
 }
 
 let Storage = {
+  set buildingId(id) {
+    if (id != this._buildingId) {
+      this._buildingId = id
+      queryRooms(id)
+    }
+  },
+  get buildingId() {
+    return this._buildingId
+  },
   set roomId(id) {
     if (id != this._roomId) {
       this._roomId = id
