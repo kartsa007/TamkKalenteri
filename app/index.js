@@ -3,9 +3,20 @@
 import { queryBuildings }  from './buildings'
 import { DatePicker } from './datePicker'
 
-//import $  from 'jquery'
-//import 'webpack-jquery-ui'
-//import 'webpack-jquery-ui/css'
+function pad(number) {
+  if (number < 10) {
+    return '0' + number;
+  }
+  return number;
+}
+
+Date.prototype.toTAMKString = function() {
+  return this.getFullYear() +
+    '-' + pad(this.getMonth() + 1) +
+    '-' + pad(this.getDate()) +
+    'T' + pad(this.getHours()) +
+    ':' + pad(this.getMinutes())
+}
 
 function init() {
 

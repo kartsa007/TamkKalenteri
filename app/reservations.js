@@ -16,13 +16,18 @@ function handleReservations(reservations) {
     let startDate = new Date(reservation.startDate)
     let endDate = new Date(reservation.endDate)
     let startOffMs = startDate.getTime() - Storage.startDate.getTime()
+    // Timezone correction
+    startOffMs -= Storage.startDate.getTimezoneOffset() * 60 * 1000
     let startOffH = startOffMs / (3600 * 1000)
+    
     let resLenMs = endDate.getTime() -
       startDate.getTime()
     let resLenH = resLenMs / (3600 * 1000)
     let day = (startDate.getDay() + 6) % 7
     calendar.drawReserved(startOffH, resLenH, reservation.subject)
   }
+  let calendarView = document.getElementById('calendarView')
+  calendarView.style.display = 'block'
 }
 
 function responseJsonData(data) {
@@ -56,8 +61,8 @@ function queryRoomReservations(startDate, endDate, roomCode) {
     method: 'post',
     headers: headers,
     body: JSON.stringify({
-      "startDate": startDate.toISOString().slice(0, 16),
-      "endDate": endDate.toISOString().slice(0, 16),
+      "startDate": startDate.toTAMKString(),
+      "endDate": endDate.toTAMKString(),
       "room": [roomCode]
     })
   }

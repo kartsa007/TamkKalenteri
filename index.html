@@ -8,25 +8,50 @@
   <title>Tamk reservation calendar</title>
   <script src="dist/bundle.js">
   </script>
-  </script>
+  <style>
+    h1 {
+      text-align: center;
+      margin: auto;
+    }
+
+    #container {
+      margin: auto;
+      width: 100%;
+    }
+
+    #selections {
+      display: flex;
+      justify-content: space-around;
+    }
+    #roomSelection {
+      width: 45%;
+    }
+    #calendarView {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
   <div id="container">
     <h1>Tamkin tilavaraukset</h1>
-    <div id="dateSelection">
-      <div id="year"></div>
-      <div id="month"></div>
-      <div id="day"></div>
-    </div>
-    <div id="roomSelection">
-      <div>Rakennus: <span id="building"></span></div>
-      <div id="room">Tila: <select id="roomselection"></select></div>
-    </div>
-    <div id="datepicker">
-      <!--input type="text" id="datepicker"-->
+    <div id='selections'>
+      <div id="roomSelection">
+        <div>Rakennus:
+          <span id="building"></span>
+        </div>
+        <div id="room">Tila:
+          <select id="roomselection"></select>
+        </div>
+      </div>
+      <div id="datepicker">
+        <!--input type="text" id="datepicker"-->
+      </div>
     </div>
     <div id="calendarView">
+      <button id="prev">Edellinen viikko</button>
+      <span id="weekNumber">Viikko</span>
+      <button id="next">Seuraava viikko</button>
       <canvas id="canvas"></canvas>
     </div>
   </div>

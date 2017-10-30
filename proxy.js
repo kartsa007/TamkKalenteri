@@ -16,7 +16,6 @@ function getProxy1() {
       return req.method == 'GET' || req.method == 'POST'
     },
     proxyReqPathResolver: function (req) {
-      console.log('Path resolver')
       let url = 'https://opendata.tamk.fi'
       url += req.originalUrl
       if (req.method == 'GET') {
