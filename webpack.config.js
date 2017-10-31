@@ -25,7 +25,7 @@ module.exports = {
         loader:"file-loader",
         query:{
           name:'[name].[ext]',
-          outputPath:'dist/images/'
+          outputPath:'/images/'
           //the images will be emmited to public/assets/images/ folder 
           //the images will be put in the DOM <style> tag as eg. background: url(assets/images/image.png); 
         }

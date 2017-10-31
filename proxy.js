@@ -29,11 +29,17 @@ function getProxy1() {
       }
       return reqOpts
     },
-    https: true
+    https: true,
+    userResHeaderDecorator: function (headersCopy,
+      proxyRes, proxyResData, userReq, userRes) {
+      console.log("testataan")
+      return headers
+    }
   }
   return proxy('https://opendata.tamk.fi', options)
 }
 
 app.use('/r1', getProxy1())
-app.use(express.static('.'))
-app.listen(3000)
+app.use('/', express.static(__dirname + '/dist'))
+app.use('/', express.static(__dirname))
+app.listen(3001)
