@@ -42,4 +42,4 @@ function getProxy1() {
 app.use('/r1', getProxy1())
 app.use('/', express.static(__dirname + '/dist'))
 app.use('/', express.static(__dirname))
-app.listen(3001)
+app.listen(3000)
